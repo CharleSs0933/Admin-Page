@@ -29,7 +29,6 @@ import { ColorModeContext } from "../../theme";
 export const NavBar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const auth = useAuth();
   const theme = useTheme();
-  const colorMode = useContext(ColorModeContext);
 
   const navigate = useNavigate();
 
