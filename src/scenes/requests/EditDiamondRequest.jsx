@@ -157,27 +157,64 @@ const EditDiamondRequest = () => {
     }, 3000);
   };
 
+  // const handleDateChange = async (event, setFieldValue) => {
+  //   const date = event.target.value;
+  //   setFieldValue("appointment_date", date);
+
+  //   try {
+  //     const availableSlots = await getSlotAvailable(date);
+
+  //     setSlots(availableSlots);
+  //   } catch (error) {
+  //     setError(error.message);
+  //   }
+  // };
+
   const handleDateChange = async (event, setFieldValue) => {
     const date = event.target.value;
-    setFieldValue("appointment_date", date);
 
-    try {
-      const availableSlots = await getSlotAvailable(date);
+    const today = new Date();
+    const selectedDate = new Date(date);
 
-      setSlots(availableSlots);
-    } catch (error) {
-      setError(error.message);
+    if (selectedDate.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
+      setError("Appointment date cannot be in the past");
+      setTimeout(() => {
+        setError(null);
+      }, 3000);
+    } else {
+      try {
+        setFieldValue("appointment_date", date);
+
+        const availableSlots = await getSlotAvailable(date);
+
+        setSlots(availableSlots);
+      } catch (error) {
+        setError(error.message);
+      }
     }
   };
 
   const handleDateAssignChange = async (event) => {
     const date = event.target.value;
-    setDate(date);
-    try {
-      const availableValuationStaffs = await getValuationStaffAvailable(date);
-      setStaffs(availableValuationStaffs);
-    } catch (error) {
-      setError(error.message);
+    // setDate(date);
+
+    const today = new Date();
+    const selectedDate = new Date(date);
+
+    if (selectedDate.setHours(0, 0, 0, 0) < today.setHours(0, 0, 0, 0)) {
+      setError("Assign date cannot be in the past");
+      setTimeout(() => {
+        setError(null);
+      }, 3000);
+    } else {
+      try {
+        setDate(date);
+
+        const availableValuationStaffs = await getValuationStaffAvailable(date);
+        setStaffs(availableValuationStaffs);
+      } catch (error) {
+        setError(error.message);
+      }
     }
   };
 
