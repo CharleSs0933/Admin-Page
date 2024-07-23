@@ -635,7 +635,7 @@ const Certificates = () => {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={14} align="center">
+                <TableCell colSpan={13} align="center">
                   No certificates available.
                 </TableCell>
               </TableRow>

@@ -185,6 +185,17 @@ const SlotTimeManagement = () => {
     }
   };
 
+  const handleNumberChange = (e) => {
+    const value = e.target.value;
+
+    if (value === "" || /^[1-9]\d*$/.test(value)) {
+      setNumber(value);
+      setError("");
+    } else {
+      setError("Please enter a positive number");
+    }
+  };
+
   return (
     <Box p="0px 20px">
       <Typography variant="h4" gutterBottom textAlign="center">
@@ -234,7 +245,7 @@ const SlotTimeManagement = () => {
                   label="Number"
                   type="number"
                   value={number}
-                  onChange={(e) => setNumber(e.target.value)}
+                  onChange={handleNumberChange}
                   fullWidth
                 />
               </Grid>
