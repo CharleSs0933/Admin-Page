@@ -153,7 +153,7 @@ const Dashboard = () => {
         />
         <StatBox
           title="Total Revenue"
-          value={data ? `${data.total_revenue}$` : 0}
+          value={data ? `${data.total_revenue.toFixed(2)}$` : 0}
           description={`In ${new Date().getFullYear()} `}
           icon={<PointOfSale sx={{ fontSize: "26px" }} />}
         />
