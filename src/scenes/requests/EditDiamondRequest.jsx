@@ -326,6 +326,7 @@ const EditDiamondRequest = () => {
                 </Typography>
                 {services.map((service) => (
                   <FormControlLabel
+                    sx={{ gridColumn: "span 4" }}
                     key={service.id}
                     control={
                       <Checkbox
