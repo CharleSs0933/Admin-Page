@@ -353,7 +353,8 @@ const Requests = () => {
 
   const lateRequests = data.filter(
     (request) =>
-      isAppointmentLate(new Date(request.last_modified_date)) &&
+      isAppointmentLate(request.appoinment_date) &&
+      request.appoinment_date !== null &&
       (request.status === "NEW" || request.status === "PROCESSED")
   );
 
