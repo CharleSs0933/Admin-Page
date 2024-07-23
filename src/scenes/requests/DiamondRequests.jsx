@@ -247,7 +247,7 @@ const Requests = () => {
         }
 
         const socket = new WebSocket(
-          "ws://diamond-shop-0fba6488d8a2.herokuapp.com/DiamondShop/ws"
+          "wss://diamond-shop-0fba6488d8a2.herokuapp.com/DiamondShop/ws"
         );
         socketRef.current = socket;
 
