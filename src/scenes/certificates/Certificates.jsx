@@ -602,10 +602,10 @@ const Certificates = () => {
                             <TableBody>
                               <TableRow>
                                 <TableCell align="center">
-                                  {certificate.min_price}
+                                  {certificate.min_price}$
                                 </TableCell>
                                 <TableCell align="center">
-                                  {certificate.max_price}
+                                  {certificate.max_price}$
                                 </TableCell>
                                 <TableCell
                                   align="center"
@@ -619,10 +619,10 @@ const Certificates = () => {
                                   {certificate.rap_percent.toFixed(2)}%
                                 </TableCell>
                                 <TableCell align="center">
-                                  {certificate.rap_price}
+                                  {certificate.rap_price.toFixed(2)}$
                                 </TableCell>
                                 <TableCell align="center">
-                                  {certificate.real_price}
+                                  {certificate.real_price}$
                                 </TableCell>
                               </TableRow>
                             </TableBody>
