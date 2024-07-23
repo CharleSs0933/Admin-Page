@@ -246,7 +246,9 @@ const Requests = () => {
           socketRef.current.close();
         }
 
-        const socket = new WebSocket("ws://localhost:8081/DiamondShop/ws");
+        const socket = new WebSocket(
+          "ws://https://diamond-shop-0fba6488d8a2.herokuapp.com/DiamondShop/ws"
+        );
         socketRef.current = socket;
 
         socket.onopen = () => {
