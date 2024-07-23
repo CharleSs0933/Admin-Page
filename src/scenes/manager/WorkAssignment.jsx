@@ -247,7 +247,7 @@ const WorkAssignment = () => {
 
         {error && (
           <Collapse in={Boolean(error)} sx={{ mt: 2, mb: 2 }}>
-            <Alert severity="success">{error}</Alert>
+            <Alert severity="error">{error}</Alert>
           </Collapse>
         )}
         {currentAssignment.length > 0 && (
