@@ -374,7 +374,7 @@ const EditDiamondRequest = () => {
                   )}
                 </FormControl>
 
-                <Box>
+                <Box sx={{ gridColumn: "span 2" }}>
                   Paid:
                   <Switch
                     label="Paid"

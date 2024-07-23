@@ -230,6 +230,7 @@ const AddDiamondRequest = () => {
                 </Typography>
                 {services.map((service) => (
                   <FormControlLabel
+                    sx={{ gridColumn: "span 4" }}
                     key={service.id}
                     control={
                       <Checkbox
@@ -287,7 +288,7 @@ const AddDiamondRequest = () => {
                     <div style={{ color: "red" }}>{errors.paid}</div>
                   )}
                 </FormControl> */}
-                <Box>
+                <Box sx={{ gridColumn: "span 2" }}>
                   Paid:
                   <Switch
                     label="Paid"
